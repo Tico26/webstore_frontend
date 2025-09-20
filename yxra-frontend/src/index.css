@@ -1,68 +1,140 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Main content grows and pushes footer down */
+main {
+  flex: 1;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+  flex-wrap: wrap; /* Makes it adapt for mobile */
+  width: 100vw;
 }
 
-body {
+/* Center the logo */
+header img {
+  flex: 1;
+  max-width: 260px; /* Adjust as needed */
+  width: 100%;
+  height: auto; /* Keeps proportions */
+  display: block;
+  margin: 0 auto; /* Ensures centering */
+}
+
+#nav-link {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+#nav-link li {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  header img {
+    order: -1; /* Logo appears above links */
+    max-width: 140px;
+  }
+
+  #nav-link {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+#main {
+  min-height: 75vh;
+}
+
+/* Footer styles */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #fff; /* adjust */
+  margin-top: auto; /* keeps footer at bottom */
+}
+
+#yxra-logo-footer {
+  max-width: 160px;
+  height: auto;
+  margin-bottom: 2rem;
+  padding-left: 17px;
+}
+
+/* Two-column layout inside footer */
+footer > div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/* Vertical divider */
+#footer-line {
+  width: 1px;
+  height: 200px;
+  background-color: black;
+  margin: 0 auto;
+  margin-left: 0px;
+}
+
+/* Lists */
+footer ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+footer ul li {
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* First list (Company) header */
+footer ul:first-child li:first-child {
+  font-weight: bold;
+}
+
+/* Second list (Socials) header */
+footer ul:last-child li:first-child {
+  font-weight: bold;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  footer > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
-  a:hover {
-    color: #747bff;
+
+  #footer-line {
+    display: none;
   }
-  button {
-    background-color: #f9f9f9;
+
+  footer ul {
+    align-items: center;
+    text-align: center;
   }
 }
