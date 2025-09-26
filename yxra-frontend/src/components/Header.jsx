@@ -1,4 +1,4 @@
-import logo from "./assets/yxra.png";
+import logo from "../assets/yxra.png";
 function Header() {
   return (
     <header>

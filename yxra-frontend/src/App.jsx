@@ -1,12 +1,13 @@
 import "./App.css";
-import Header from "./Header";
-import Footer from "./Footer";
-import Body from "./Body";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Homepage from "./components/Homepage";
 function App() {
   return (
     <>
       <Header />
-      <Body />
+      <Homepage />
+
       <Footer />
     </>
   );
